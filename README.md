@@ -26,15 +26,19 @@ To run the project:
 That's all. Hope you like it!
 
 SIGN-IN PAGE:
+
 ![image](https://user-images.githubusercontent.com/18748473/115383920-056c2e00-a1f4-11eb-9fbe-264b95c4fbc0.png)
 
 CONTACTS PAGE:
+
 ![image](https://user-images.githubusercontent.com/18748473/115383935-09984b80-a1f4-11eb-9131-b6f6f81e9c51.png)
 
 NOTIFICATIONS PAGE:
+
 ![image](https://user-images.githubusercontent.com/18748473/115384008-25035680-a1f4-11eb-9250-eb4ddd6579c8.png)
 
 DASHBOARD PAGE:
+
 ![image](https://user-images.githubusercontent.com/18748473/115384027-2b91ce00-a1f4-11eb-9b66-9c5262efd253.png)
 
 USE open with live server extension on vscode if don't want to spend time setting up node and server.js
