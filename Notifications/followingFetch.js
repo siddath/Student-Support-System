@@ -1,0 +1,41 @@
+import {Storage} from '../storage.js';
+const session = window.sessionStorage;
+const loggedInUser = session.getItem("loggedInUser");
+async function followingDataFetch(){
+    const db=firebase.firestore();
+   // db.settings({timestampsInSnapshots: true});
+    let followingData = db.collection('following').get().then(snapshot => {
+        snapshot.docs.forEach(docs =>{
+            // console.log(docs.data());
+            if(docs.id==="following-"+loggedInUser){
+            for(var folllowEle in docs.data()){
+                var value = docs.get(folllowEle);
+                Storage.following.push({followingTag: folllowEle, fullvalue : value});
+                // console.log(folllowEle);
+            }
+            }
+        })
+    }).catch(function(error){
+        console.log(error);
+    });
+    const dataFinal = await followingData;
+}
+async function newsContentFetch(newsTag){
+    const db=firebase.firestore();
+   // db.settings({timestampsInSnapshots: true});
+    let newsContentData = db.collection(newsTag).get().then(snapshot => {
+        snapshot.docs.forEach(docs =>{
+            var uname = [];
+            for(var contentElement in docs.data()){
+                var str = newsTag;
+                var res = str.split("-");
+                var contentData = docs.get(contentElement);
+                Storage.notifications.push({title : contentElement, content: contentData, tag: res[0]});
+            }
+        })
+    }).catch(function(error){
+        console.log(error);
+    });
+    const dataFinal = await newsContentData;
+}
+export {followingDataFetch as followingDataFetch, newsContentFetch as newsContentFetch};

@@ -1,0 +1,143 @@
+.window{
+    font-family: "Open Sans";
+}
+h1 { font-family: "Open Sans"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+.institution-logo{
+    display: flex;
+    vertical-align: middle;
+    padding: 5px;
+    margin-left: 30px;
+    margin-top: 5px;
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+}
+.title{
+    display: flex;
+    font-size: 32px;
+    font-weight: 700;
+    vertical-align: middle;
+    margin-top: 30px;
+}
+.profile-data{
+    height: 520px;
+    display: inline-block;
+    background-color: rgba(233,233,233,1);
+}
+.person-image{
+    height: 130px;
+    width: 130px;
+    border-radius: 100%;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.appBar{
+    background-color: rgba(62,160,203,1);
+    height: 100px;
+}
+.navigation-bar{
+    display: flex;
+    background-color: rgba(239,222,57,1);
+    opacity: 0.7;
+    height: 75px;
+}   
+.navbar-element{
+    padding: 10px;
+    font-size: 22px;
+    font-weight: 800;
+}
+.main-content{
+    margin-top: 10px;
+    font-size: 38px;
+    font-weight: 600;
+    border: 5px 5px 5px 5px;
+}
+.news-update-container{
+    display: flex;
+    flex-direction: column;
+}
+#news-update-container-rect{
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_18 {
+    filter: drop-shadow(0px 9px 33px rgba(0, 0, 0, 0.161));
+    position: absolute;
+    overflow: visible;
+    width: 968px;
+    margin-top: 10px;
+}
+.news-update-content-header{
+    margin: 10px;
+    position: absolute;
+    overflow: visible;
+    width: 79px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgba(0,0,0,1);
+    text-transform: uppercase;
+}
+.news-update-content-body{
+    margin-left: 10px;
+    margin-top: 38px;
+    position: absolute;
+    overflow: visible;
+    width: 837px;
+    text-align: left;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(112,112,112,1);
+}
+.newsTags{
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.notification-modal{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-family: 'Open Sans';
+}
+.chatbotDiv{
+    right: 60px;
+}
+
+/* 
+.panel {
+    border: rgb(10, 169, 243) 2px solid;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.panel-heading {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    color: rgb(216, 219, 218);
+    font-family: cursive;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 4px;
+    margin: 0px;
+    background-color: rgb(39, 39, 39);
+}
+
+.panel-collapse {
+    padding: 0px;
+    border-top: rgb(10, 169, 243) 2px solid;
+}
+
+.container {
+    padding: 0px;
+} */

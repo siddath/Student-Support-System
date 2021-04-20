@@ -1,0 +1,55 @@
+.form-notification {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -300px;
+    left: 30%;
+    width: 40%;
+    height: 45px;
+    border-radius: 20px;
+    z-index: 2;
+    color: white;
+    transition: top 0.5s cubic-bezier(.46, .03, .52, .96);
+}
+
+.show-notif {
+    top: 20px;
+}
+
+.success {
+    background-color: rgba(40, 134, 40, 0.6);
+    border: 2px solid #4a934a;
+}
+
+.failure {
+    background-color: rgba(230, 22, 26, 0.8);
+    border: 2px solid #cf1322;
+}
+.chatbotDiv{
+    /* background-color: rgb(11, 167, 235); */
+    background-color: #007bff;
+    z-index: 1000;
+    color: azure;
+    height: 38px;
+    width: 300px;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    cursor: pointer;
+    justify-content: center;
+    padding-right: 0;
+    padding-left: 0;
+    font-family: 'Open Sans';
+    font-weight: bolder;
+}
+.chatbot{
+    display: flex; 
+    /* width: 300px; */
+    bottom: 40px;
+    /* margin-bottom:10px; */
+    /* right: 60px; */
+    z-index: 1000;
+    cursor: pointer;
+    position: absolute;
+}

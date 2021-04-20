@@ -1,0 +1,75 @@
+.window{
+    font-family: "Open Sans";
+}
+h1 { font-family: "Open Sans"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+.institution-logo{
+    display: flex;
+    vertical-align: middle;
+    padding: 5px;
+    margin-left: 30px;
+    margin-top: 5px;
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+}
+.title{
+    display: flex;
+    font-size: 32px;
+    font-weight: 700;
+    vertical-align: middle;
+    margin-top: 30px;
+}
+.profile-data{
+    height: 520px;
+    display: inline-block;
+    background-color: rgba(233,233,233,1);
+}
+.person-image{
+    height: 130px;
+    width: 130px;
+    border-radius: 100%;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.appBar{
+    background-color: rgba(62,160,203,1);
+    height: 100px;
+}
+.navigation-bar{
+    display: flex;
+    background-color: rgba(239,222,57,1);
+    opacity: 0.7;
+    height: 75px;
+}   
+.navbar-element{
+    padding: 10px;
+    font-size: 22px;
+    font-weight: 800;
+}
+.main-content{
+    margin-top: 10px;
+    font-size: 38px;
+    font-weight: 600;
+    border: 5px 5px 5px 5px;
+}
+.faculties-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.person{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 20px 10px 0px;
+    padding: 10px 20px 0px 0px;
+}
+.card-title{
+    font-weight: bolder;
+}
+.card-body a{
+    margin-bottom:0;
+}
+.chatbotDiv{
+    right: 60px;
+}
