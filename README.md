@@ -1,4 +1,4 @@
-# Student-Support-System-S-3
+# Student-Support-System
 Student Support System is my project that was developed during my final year of B.Tech as my major project. It acts as a medium (portal) between the students and the college and is an one stop solution for all student needs and queries. Made with HTML5, CSS3, Bootstrao, Javscript. Cloud Computing and UI/UX were heavily focused upon and are implemented in this project. The project is linked to the Google Cloud Platform and makes use of Firebase, Firestore and DialogFlow to make sure that the platform is secure, scalable and fast when it comes to data. DialogFlow powers the AI chatbot which has been trained to answer generic queries and help the user.
 
 
