@@ -10,7 +10,10 @@ async function followingDataFetch(){
             if(docs.id==="following-"+loggedInUser){
             for(var folllowEle in docs.data()){
                 var value = docs.get(folllowEle);
-                Storage.following.push({followingTag: folllowEle, fullvalue : value});
+                for(var tags of value)
+                {
+                Storage.following.push(tags);
+                }
                 // console.log(folllowEle);
             }
             }
@@ -25,11 +28,11 @@ async function newsContentFetch(newsTag){
    // db.settings({timestampsInSnapshots: true});
     let newsContentData = db.collection(newsTag).get().then(snapshot => {
         snapshot.docs.forEach(docs =>{
-            var uname = [];
             for(var contentElement in docs.data()){
                 var str = newsTag;
                 var res = str.split("-");
                 var contentData = docs.get(contentElement);
+                console.log(contentElement);
                 Storage.notifications.push({title : contentElement, content: contentData, tag: res[0]});
             }
         })

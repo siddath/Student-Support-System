@@ -41,9 +41,9 @@ async function getDetailsUsers(){
 function checkIfFollowing(buttonId){
     //console.log(Storage.following);  
     var checkIfFollowingData = Storage.following.filter(function(followingElement) {
-        var str = followingElement.fullvalue;
-        var res = str.split("-");
-        return res[0] === buttonId
+        // var str = followingElement.fullvalue;
+        // var res = str.split("-");
+       return followingElement === buttonId;
     });
     return checkIfFollowingData;
 }
@@ -58,7 +58,7 @@ function createNewsTags(){
         newNewsTag.setAttribute("id", tagElement.tag);
         newsTagDiv.appendChild(newNewsTag);
         var dataToApplyTagColour = checkIfFollowing(tagElement.tag);
-        //console.log(dataToApplyTagColour);
+        console.log(dataToApplyTagColour);
         if(dataToApplyTagColour.length === 1){
             newNewsTag.classList.add("btn-success");
         }
@@ -96,14 +96,16 @@ function displayImage(image){
 }
 
 async function displayNewsContent(){
-   for(var tag of Storage.following){
-      let finalNewsContent = await newsContentFetch(tag.fullvalue);
+    console.log(Storage.following);
+   for(var element of Storage.following){
+           let finalNewsContent = await newsContentFetch(element+'-news');
    }
    //console.log(Storage.notifications);
    createNotificationModal();
 }
 
 function createNotificationModal(){
+    console.log(Storage.notifications);
     const notificationsContentDiv = document.querySelector(".news-update");
     const modalsContentDiv = document.getElementById('modals-content');
     var i = 0;
@@ -146,10 +148,11 @@ async function subscribe(buttonId){
     // console.log("Before Operation : ")  
     // console.log(Storage.following);
     if(checkFollowResult.length === 1){
-        var str = checkFollowResult[0].fullvalue;
+        var str = checkFollowResult[0];
+        console.log(str);
         var res = str.split("-");
         console.log("Button Removed: " + buttonId);
-        const tagButton = document.getElementById(res[0]);
+        const tagButton = document.getElementById(str);
         let removedData = await removeTagFromFollowing(buttonId);
         Storage.following = [];
         tagButton.classList.remove("btn-success");
@@ -171,7 +174,9 @@ async function subscribe(buttonId){
         //Storage.following.push({followingTag: buttonId, fullvalue : buttonId+'-news'});
     }
     // console.log("After Operation : ")  
-    // console.log(Storage.following);
+    console.log(Storage.following);
+    console.log(Storage.notifications);
+
 }
 
 async function pushModal(tag){  

@@ -6,7 +6,7 @@ async function pushTagToFollowing(tagId){
     const db=firebase.firestore();
     var followingDocRef = db.collection('following').doc('following-'+loggedInUser);
     var setWithMerge = followingDocRef.set({
-        i: tagId+'-news',
+        following: firebase.firestore.FieldValue.arrayUnion(tagId),
     }, { merge: true })
     .then(() => {
         console.log("Document successfully written!");
@@ -23,7 +23,7 @@ async function removeTagFromFollowing(id){
     var docRefToRemove = db.collection('following').doc('following-'+loggedInUser);
     // Remove the 'capital' field from the document
     var removeFollowingTag = docRefToRemove.update({
-        i : firebase.firestore.FieldValue.delete()
+        following: firebase.firestore.FieldValue.arrayRemove(id),
     });
 
     const dataFinal = await removeFollowingTag;
