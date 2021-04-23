@@ -44,16 +44,6 @@ function renderChart(datapoints){
             legendMarkerColor: "grey",
             legendText: "Subjects",
             dataPoints: datapoints,
-            // dataPoints: [      
-            //     { y: 89, label: "Artifical Intelligence" },
-            //     { y: 67,  label: "Professional Ethics" },
-            //     { y: 55,  label: "Web Programming" },
-            //     { y: 78,  label: "Total Quality Management" },
-            //     { y: 80,  label: "Distributed Computing" },
-            //     { y: 65, label: "Object Oriented Analysis & Design" },
-            //     { y: 98,  label: "Human Computer Interface" },
-            //     { y: 59,  label: "Machine Learning" }
-            // ]
         }]
     });
     chart.render();

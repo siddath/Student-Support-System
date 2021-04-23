@@ -21,7 +21,6 @@ async function pushTagToFollowing(tagId){
 async function removeTagFromFollowing(id){
     const db=firebase.firestore();
     var docRefToRemove = db.collection('following').doc('following-'+loggedInUser);
-    // Remove the 'capital' field from the document
     var removeFollowingTag = docRefToRemove.update({
         following: firebase.firestore.FieldValue.arrayRemove(id),
     });

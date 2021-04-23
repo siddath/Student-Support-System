@@ -38,11 +38,8 @@ async function getDetailsUsers(){
     displayDetails();
 }
 
-function checkIfFollowing(buttonId){
-    //console.log(Storage.following);  
+function checkIfFollowing(buttonId){ 
     var checkIfFollowingData = Storage.following.filter(function(followingElement) {
-        // var str = followingElement.fullvalue;
-        // var res = str.split("-");
        return followingElement === buttonId;
     });
     return checkIfFollowingData;
@@ -84,7 +81,6 @@ function displayDetails(){
     var userData = Storage.login.filter( function(item) {
         return item.username == loggedInUser;
     });
-    //console.log(userData);
     nameDiv.innerText = userData[0].username;
     classDiv.innerText = userData[0].class;
     branchDiv.innerText = userData[0].branch;
@@ -100,7 +96,6 @@ async function displayNewsContent(){
    for(var element of Storage.following){
            let finalNewsContent = await newsContentFetch(element+'-news');
    }
-   //console.log(Storage.notifications);
    createNotificationModal();
 }
 
@@ -136,7 +131,6 @@ function getFollowing()
 }
 async function getFollowingData(){
     let followingDataFinal = await followingDataFetch();
-    //console.log(Storage.following);
     createNewsTags();
 }
 
@@ -145,8 +139,6 @@ async function updateFollowingList(){
 }
 async function subscribe(buttonId){
     const checkFollowResult = checkIfFollowing(buttonId); 
-    // console.log("Before Operation : ")  
-    // console.log(Storage.following);
     if(checkFollowResult.length === 1){
         var str = checkFollowResult[0];
         console.log(str);
@@ -173,7 +165,6 @@ async function subscribe(buttonId){
         let updatedNotificationsContent = await pushModal(buttonId);
         //Storage.following.push({followingTag: buttonId, fullvalue : buttonId+'-news'});
     }
-    // console.log("After Operation : ")  
     console.log(Storage.following);
     console.log(Storage.notifications);
 
@@ -182,10 +173,8 @@ async function subscribe(buttonId){
 async function pushModal(tag){  
     const modalsContentDiv = document.getElementById('modals-content');
     let updatedNewsContent = await newsContentFetch(tag+'-news');
-    //console.log(Storage.notifications);
     const lengthOfNotifications = Storage.notifications.length;
     const indexOfNotificationNeeded = lengthOfNotifications - 1;
-   // console.log(indexOfNotificationNeeded);
     var newNotificationData = Storage.notifications[indexOfNotificationNeeded];
     const notificationModalButton = document.createElement('button');
     notificationModalButton.id = "notification-modal-"+ newNotificationData.tag + "-" + indexOfNotificationNeeded;
@@ -206,18 +195,6 @@ async function pushModal(tag){
 
 async function removeModals(tag){
      const notificationModalDiv = document.getElementById('modals-content').children;
-    // console.log(notificationModalDiv.length);
-    // for(var i = 0; i < notificationModalDiv.length; i++){
-    //     //notificationModalDiv.remove();
-    //     console.log(notificationModalDiv[i]);
-    //     notificationModalDiv[i].remove();
-    // }
-    // for(var notifElement of notificationModalDiv){
-    //     console.log(notifElement);
-    //     notifElement.remove();
-    // }
-    // Storage.notifications = [];
-    // getFollowing();
     for(var tagsIndexElement of Storage.tagsIndex){
         if(tagsIndexElement.tag === tag){
             const tagRemoveModal = document.getElementById('notification-modal-'+tag+'-'+tagsIndexElement.index);
@@ -236,17 +213,6 @@ function arrayRemove(arr, value) {
 }
 
 function displayChatBot(){
-        // var div = document.createElement("div");
-        // document.getElementsByTagName('body')[0].appendChild(div);
-        // div.outerHTML = "<div id='botDiv' style='height: 38px; position: fixed; bottom: 0; z-index: 1000; background-color: #fff'><div id='botTitleBar' style='height: 38px; width: 400px; position:fixed; cursor: pointer;'></div><iframe width='400px' height='600px' src='BOTFRAMEWORK_WEB_EMBED_URL'></iframe></div>"; 
-    
-        // document.querySelector('body').addEventListener('click', function (e) {
-        //     e.target.matches = e.target.matches || e.target.msMatchesSelector;
-        //     if (e.target.matches('#botTitleBar')) { 
-        //         var botDiv = document.querySelector('#botDiv'); 
-        //         botDiv.style.height = botDiv.style.height == '600px' ? '38px' : '600px';
-        //     };
-        // });
         const chatbot = document.querySelector('.chatbot');
         if(chatbot.style.display == 'none')
         {

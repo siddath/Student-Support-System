@@ -11,15 +11,10 @@
             if(docs.id==="contacts-siddath"){
             for(let key in docs.data())
             {
-                //var value = docs.get(key);
-                //map.set(key,value);
-                //for(var ele in key)
                 let value= [];
                 value = docs.get(key);
                 console.log(value);
                 Storage.contacts.push({name: key, values: value});
-                //array = Array.from(map, ([name, value]) => ({ name, value }));
-                //console.log(value);
             }
         }
         })

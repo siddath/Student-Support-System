@@ -1,7 +1,6 @@
 import {Storage} from '../storage.js';
 async function getNewsTags(){
     const db=firebase.firestore();
-   // db.settings({timestampsInSnapshots: true});
     let newsTagsData = db.collection('news-tags').get().then(snapshot => {
         snapshot.docs.forEach(docs =>{
             for(var tag in docs.data()){

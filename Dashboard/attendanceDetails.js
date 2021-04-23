@@ -16,11 +16,8 @@ async function attendanceDataUser(){
             {
                 var value = docs.get(key);
                 map.set(key,value);
-                //array = Array.from(map, ([name, value]) => ({ name, value }));
-             //   console.log(array);
             }
             Storage.attendance.push(map);
-           // console.log(Storage.attendance);
         }
         })
     }).catch(function(error){
